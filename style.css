@@ -1,0 +1,12 @@
+div,span{
+    display: inline-block;
+}
+
+div:before {
+        content: " : " ;
+    }
+
+.cmd{
+    position:absolute;
+    bottom:5px;
+}
