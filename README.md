@@ -1,5 +1,5 @@
 # Crypt & Decrypt
-( http://jsfiddle.net/a_dolgosheev/nLecv9pd/ )
+( you can test it here : http://jsfiddle.net/a_dolgosheev/p46btmd1/ )
 
 ## it consist HELP in the console
 
