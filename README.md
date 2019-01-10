@@ -4,7 +4,9 @@
 ## it consist HELP in the console
 
 # set
-    - text [something]
-    - crypt [something]
-    - salt [something]
-    - decrypt [something]
+    - set salt [something]
+        ->
+        - set crypt [something]
+            result : [decrypt]
+        - set decrypt [something]
+            result : [crypt]
