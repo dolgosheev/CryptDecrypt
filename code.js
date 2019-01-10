@@ -15,6 +15,7 @@ var
 
 TextDiv = tmp001.innerHTML;
 
+
 function cryptoX(inpval){
 arr = TextDiv.split('');
 arrX = [];
@@ -23,6 +24,17 @@ elemX = ( arr[val+1] !== undefined )?( arr[val+1] ):( arr.shift() )
     arrX.push(item + elemX);
 });
 inpval.innerHTML= arrX.join(salt);
+}
+
+function decryptoX(inpval){
+arr = crypt.split(salt);
+arrX = [];
+arr.forEach(function(item,val){
+    arrX.push(arr[val][0]);
+});
+inpval.innerHTML=  (arrX.length > 1 )?(arrX.join('')):('error');
+console.log(arrX);
+console.log(arrX.length);
 }
 
 //setInterval(function(){(tmp004.innerHTML == '')?(tmp004.innerHTML='|'):(tmp004.innerHTML='');},500);
@@ -94,6 +106,7 @@ tmp005.addEventListener("keyup", function(event) {
                         tmp003.style.display = 'none';
                         tmp003.previousSibling.style.display = 'none';
 
+                        decryptoX(tmp004);
                     break;
 
                     default:
