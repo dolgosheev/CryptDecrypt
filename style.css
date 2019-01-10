@@ -10,3 +10,7 @@ div:before {
     position:absolute;
     bottom:5px;
 }
+
+#code,#code ~ div , #decode , #decode ~ div{
+    display:none;
+}

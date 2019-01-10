@@ -2,26 +2,27 @@ window.onload = function(){
 
 var salt = '', crypt = '';
 var
-    tmp001 = 	document.getElementsByTagName('div')[0],
-    tmp002 =    document.getElementById('salt'),
+    tmp001 = 	document.getElementById('text').nextSibling,
+    tmp002 =    document.getElementById('salt').nextSibling,
     salt   =    tmp002.innerHTML,
-    tmp003 = 	document.getElementById('code'),
-    tmp004 = 	document.getElementById('decode'),
+    tmp003 = 	document.getElementById('code').nextSibling,
+    tmp004 = 	document.getElementById('decode').nextSibling,
     tmp005 = 	document.getElementById('cmd'),
-    tmp006 = 	document.getElementById('crypt').innerHTML = crypt,
+    tmp006 = 	document.getElementById('crypt').nextSibling,
+    crypt  =    tmp006.innerHTML,
 
     memory = [];
 
 TextDiv = tmp001.innerHTML;
 
-function cryptoX(){
-arr = TextDiv.split(' ');
+function cryptoX(inpval){
+arr = TextDiv.split('');
 arrX = [];
 arr.forEach(function(item,val){
 elemX = ( arr[val+1] !== undefined )?( arr[val+1] ):( arr.shift() )
     arrX.push(item + elemX);
 });
-tmp003.innerHTML= arrX.join(salt);
+inpval.innerHTML= arrX.join(salt);
 }
 
 //setInterval(function(){(tmp004.innerHTML == '')?(tmp004.innerHTML='|'):(tmp004.innerHTML='');},500);
@@ -46,18 +47,53 @@ tmp005.addEventListener("keyup", function(event) {
                 case 'set':
                 	switch(this.value.split(" ")[1]){
                     case 'text':
-                    	TextDiv = this.value.split(" ")[2];
-                        document.getElementById('text').innerHTML = TextDiv;
+                    	TextDiv = this.value.substring(9);
+                        tmp001.innerHTML = TextDiv;
+
+                        tmp001.nextSibling.style.display = 'inline';
+                        tmp001.style.display = 'inline';
+                        tmp001.previousSibling.style.display = 'inline';
+
+                        tmp006.nextSibling.style.display = 'none';
+                        tmp006.style.display = 'none';
+                        tmp006.previousSibling.style.display = 'none';
+
+                        tmp003.nextSibling.style.display = 'inline';
+                        tmp003.style.display = 'inline';
+                        tmp003.previousSibling.style.display = 'inline';
+
+                        tmp004.nextSibling.style.display = 'none';
+                        tmp004.style.display = 'none';
+                        tmp004.previousSibling.style.display = 'none';
+
+                        cryptoX(tmp003);
                     break;
 
                     case 'salt':
-                    	salt = this.value.split(" ")[2];
-                        document.getElementById('salt').innerHTML = salt;
+                    	salt = this.value.substring(9);
+                        tmp002.innerHTML = salt;
                     break;
 
                     case 'crypt':
-                    	crypt = this.value.split(" ")[2];
-                        document.getElementById('crypt').innerHTML = crypt;
+                    	crypt = this.value.substring(10);
+                        tmp006.innerHTML = crypt;
+
+                        tmp006.nextSibling.style.display = 'inline';
+                        tmp006.style.display = 'inline';
+                        tmp006.previousSibling.style.display = 'inline';
+
+                        tmp001.nextSibling.style.display = 'none';
+                        tmp001.style.display = 'none';
+                        tmp001.previousSibling.style.display = 'none';
+
+                        tmp004.nextSibling.style.display = 'inline';
+                        tmp004.style.display = 'inline';
+                        tmp004.previousSibling.style.display = 'inline';
+
+                        tmp003.nextSibling.style.display = 'none';
+                        tmp003.style.display = 'none';
+                        tmp003.previousSibling.style.display = 'none';
+
                     break;
 
                     default:
