@@ -1,7 +1,8 @@
 # Crypt & Decrypt
-( you can test it here : http://jsfiddle.net/a_dolgosheev/p46btmd1/ , all my fiddles http://jsfiddle.net/user/a_dolgosheev/fiddles/)
+( you can test it here : http://jsfiddle.net/a_dolgosheev/p46btmd1/ ), 
+all my fiddles here http://jsfiddle.net/user/a_dolgosheev/fiddles/ )
 
-## it consist HELP in the console
+## it contain HELP in the console (F12)
 
 # set
     - set salt [something]
